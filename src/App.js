@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import Menu from './components/Menu'
+import BarChar from './components/BarChar'
 
 const App = () => {
 	const [exchange, setExchange] = useState()
@@ -26,6 +27,9 @@ const App = () => {
 			<div className='App'>
 				<div className='exchange'>
 					<Menu />
+					<div className='exchange__chart'>
+						<BarChar />
+					</div>
 				</div>
 			</div>
 		</>
