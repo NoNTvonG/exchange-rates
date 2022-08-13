@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
 	Area,
 	AreaChart,
@@ -9,22 +9,25 @@ import {
 	YAxis,
 } from 'recharts'
 
-const Char = () => {
-	const [data, setData] = useState([
-		{ date: '2022-08-13', value: 4.445528 },
-		{ date: '2022-08-12', value: 4.415204 },
-		{ date: '2022-08-11', value: 4.424017 },
-		{ date: '2022-08-10', value: 4.41278 },
-		{ date: '2022-08-09', value: 4.397282 },
-		{ date: '2022-08-08', value: 4.400945 },
-		{ date: '2022-08-07', value: 4.417818 },
-		{ date: '2022-08-06', value: 4.412455 },
-		{ date: '2022-08-05', value: 4.414104 },
-		{ date: '2022-08-04', value: 4.414082 },
-		{ date: '2022-08-03', value: 4.400014 },
-		{ date: '2022-08-02', value: 4.406765 },
-		{ date: '2022-08-01', value: 4.402548 },
-	])
+const Char = ({ dataType }) => {
+	const [data, setData] = useState([])
+
+	useEffect(() => {
+		console.log('другорядне вікно')
+		console.log(dataType)
+		const keyParam = Object.keys(dataType).map(e => e)
+		const valueParam = Object.values(dataType).map(e => Object.values(e)[0])
+
+		for (let index = 0; index < keyParam.length; index++) {
+			setData(item => [
+				...item,
+				{
+					date: keyParam[index],
+					value: valueParam[index],
+				},
+			])
+		}
+	}, [dataType])
 
 	return (
 		<>
