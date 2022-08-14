@@ -14,10 +14,10 @@ export default class ExchangeService {
 		return response.data
 	}
 
-	static async getFluctuation(endDate, startDate) {
+	static async getFluctuation(startDate) {
 		const response = await axios({
 			method: 'get',
-			url: `https://api.apilayer.com/exchangerates_data/2022-08-14&base=PLN`,
+			url: `https://api.apilayer.com/exchangerates_data/${startDate}&base=PLN`,
 			redirect: 'follow',
 			headers: {
 				apikey: 'XUwKC1au6BaZNcbPpgk5YYbbMmAvh3jc',
