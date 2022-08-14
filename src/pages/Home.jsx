@@ -1,24 +1,10 @@
-import React, { useEffect, useState } from 'react'
-import { eachWeekOfInterval } from 'date-fns'
+import React from 'react'
 
 const Home = () => {
-	const [first, setfirst] = useState()
-	useEffect(() => {
-		setfirst()
-
-		console.log(
-			eachWeekOfInterval({
-				start: new Date(Date.now()),
-				end: new Date(2014, 10, 23),
-			})
-		)
-	}, [])
-
 	return (
-		<>
-			<div>виберіть валюту</div>
-			{/* {first} */}
-		</>
+		<div id='home_page'>
+			<h1>Select a currency</h1>
+		</div>
 	)
 }
 

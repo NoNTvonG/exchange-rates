@@ -11,7 +11,8 @@ body {
 .App {
 	background-color: $cDarkNight;
 	width: 100%;
-	min-height: 100vh;
+	height: 100vh;
+	height: 100%;
 	display: grid;
 	grid-template-columns: 300px 1fr;
 
@@ -22,6 +23,21 @@ body {
 		border-right: 1px solid $cDark;
 		max-height: 100vh;
 		overflow: overlay;
+
+		&::-webkit-scrollbar {
+			width: 3px;
+		}
+
+		/* Track */
+		&::-webkit-scrollbar-track {
+			background: #1b1c1f;
+		}
+
+		/* Handle */
+		&::-webkit-scrollbar-thumb {
+			background: $cYellow;
+			border-radius: 5px;
+		}
 
 		nav {
 			height: 100%;
@@ -59,10 +75,11 @@ body {
 	}
 
 	.layout {
-		.char_page {
+		#char_page {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
+			justify-content: center;
 			height: calc(100% - 60px);
 
 			h2 {
@@ -87,6 +104,17 @@ body {
 				box-shadow: 15px 30px 40px 5px rgba(0, 0, 0, 0.5);
 				text-align: center;
 				border: none;
+			}
+		}
+		#home_page {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 100%;
+
+			h1 {
+				color: $cWhite;
+				font-size: 2rem;
 			}
 		}
 	}

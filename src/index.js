@@ -13,7 +13,7 @@ root.render(
 		<Routes>
 			<Route path='/' element={<App />}>
 				<Route index element={<Home />} />
-				<Route path='/chart/:type' element={<ExchangeChart />} />
+				<Route path='/chart/:currencyType' element={<ExchangeChart />} />
 			</Route>
 		</Routes>
 	</BrowserRouter>
