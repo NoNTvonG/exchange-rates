@@ -6,13 +6,13 @@ body {
 	font-family: 'Roboto', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	background-color: $cDarkNight;
 }
 
 .App {
 	background-color: $cDarkNight;
 	width: 100%;
 	height: 100vh;
-	height: 100%;
 	display: grid;
 	grid-template-columns: 300px 1fr;
 
@@ -44,14 +44,20 @@ body {
 			border-top-left-radius: 15px;
 			border-top-right-radius: 15px;
 
+			p {
+				color: $cWhite;
+				font-size: 1rem;
+				text-align: center;
+			}
+
 			.back_btn {
 				display: flex;
 				align-items: center;
-
 				position: sticky;
 				bottom: 0;
 				padding: 20px;
 				background-color: $cDarkNight;
+				border-top: 1px solid rgba($cYellow, 0.3);
 
 				p {
 					color: $cWhite;
