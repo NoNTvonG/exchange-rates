@@ -11,6 +11,12 @@
 		align-items: center;
 		justify-content: space-between;
 
+		&.active {
+			p {
+				border-bottom: 1px solid $cYellow;
+			}
+		}
+
 		p {
 			color: $cWhite;
 			font-family: $fFont1;
